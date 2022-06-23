@@ -34,8 +34,6 @@ class RandomBackgroundTransform(Transform):
         res = self.background.copy()
         res = cv2.resize(res, (shape[1], shape[0]))
         res[mask] = img[mask]
-        cv2.imshow("test", cv2.resize(res, (400, 400)))
-        cv2.waitKey(1000)
         return res
 
     def polygons_to_bitmask(self, polygons, height, width):
